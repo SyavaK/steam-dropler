@@ -198,6 +198,8 @@ namespace steam_dropler.Steam
             }
 
             _client.Send(games);
+            var clientHello = new ClientGCMsgProtobuf<CMsgClientHello>((uint)EGCBaseClientMsg.k_EMsgGCClientHello);  // added
+            _client.Send(clientHello, 440);  // added
 
         }
 
